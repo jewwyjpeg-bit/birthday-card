@@ -119,3 +119,46 @@ body {
   border-radius: 4px;
   height: 10px;
 }
+/* CARD CONTAINER */
+.card {
+  width: 320px;
+  height: 420px;
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* INNER WRAPPER */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+/* FRONT + INSIDE */
+.card-front,
+.card-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+
+/* FRONT */
+.card-front {
+  z-index: 2;
+}
+
+/* INSIDE (BACK) */
+.card-inside {
+  transform: rotateY(180deg);
+}
+
+/* FLIPPED STATE */
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
