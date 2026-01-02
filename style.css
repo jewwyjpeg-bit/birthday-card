@@ -1,0 +1,121 @@
+body {
+  background: #fff0f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Patrick Hand', cursive;
+  margin: 0;
+  overflow: hidden;
+}
+
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card {
+  width: 380px;
+  height: 550px;
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s ease;
+  transform-style: preserve-3d;
+}
+
+.card.open .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.polaroid {
+  width: 90%;
+  height: 90%;
+  background: white;
+  padding: 15px 10px 60px 10px;
+  border-radius: 12px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.polaroid img {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.caption { margin-top: auto; font-size: 14px; color: #ff69b4; text-align: center; }
+
+.card-inside {
+  background: #fff8fc;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.inside-content {
+  text-align: center;
+  position: relative;
+}
+
+.inside-content h1 { font-size: 24px; color: #ff69b4; margin-bottom: 10px; }
+.inside-content p { font-size: 16px; color: #555; line-height: 1.5; margin-bottom: 15px; }
+.inside-photo { width: 240px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 10px; }
+.signature { font-size: 16px; color: #ff69b4; margin-bottom: 15px; }
+
+#playPauseBtn {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.music-bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 340px;
+  height: 50px;
+  margin: 0 auto 20px auto;
+}
+
+.bar {
+  flex: 1;
+  margin: 0 2px;
+  background: #ff69b4;
+  border-radius: 4px;
+  height: 10px;
+}
